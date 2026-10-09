@@ -1,0 +1,429 @@
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap');
+
+:root {
+  --fondo: #10091f;
+  --rosa: #ff9acb;
+  --lila: #c4a2ff;
+  --blanco: #fff8ff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  background: var(--fondo);
+  color: var(--blanco);
+  font-family: 'DM Sans', sans-serif;
+  overflow-x: hidden;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(
+      ellipse at 20% 20%,
+      #6b286b55,
+      transparent 55%
+    ),
+    radial-gradient(
+      ellipse at 85% 75%,
+      #40317b66,
+      transparent 55%
+    ),
+    linear-gradient(150deg, #12091f, #080611);
+  z-index: -3;
+}
+
+/* ESTRELLAS Y CORAZONES */
+
+#estrellas,
+#corazones {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+#estrellas {
+  z-index: -1;
+}
+
+#corazones {
+  z-index: 10;
+}
+
+.estrella {
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  background: white;
+  border-radius: 50%;
+  box-shadow: 0 0 8px #fff;
+  animation: brillar 3s infinite alternate;
+}
+
+@keyframes brillar {
+  0% {
+    opacity: .15;
+    transform: scale(.6);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1.5);
+  }
+}
+
+/* PANTALLAS */
+
+.pantalla {
+  display: none;
+  min-height: 100svh;
+  padding: 95px 20px 65px;
+  justify-content: center;
+  align-items: center;
+}
+
+.pantalla.activa {
+  display: flex;
+  animation: aparecer .9s ease both;
+}
+
+.contenido {
+  width: 100%;
+  max-width: 700px;
+  text-align: center;
+}
+
+@keyframes aparecer {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* TEXTOS */
+
+h1,
+h2 {
+  font-family: 'Playfair Display', serif;
+}
+
+h1 {
+  font-size: clamp(2.5rem, 8vw, 4.7rem);
+  color: var(--rosa);
+  line-height: 1.2;
+  margin: 15px 0;
+  text-shadow: 0 0 35px #ff79c644;
+}
+
+h2 {
+  font-size: clamp(1.4rem, 5vw, 2.1rem);
+  font-weight: 400;
+  margin: 14px 0 25px;
+}
+
+.etiqueta {
+  color: var(--lila);
+  font-size: .75rem;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+.subtitulo {
+  color: #d9c5ee;
+  font-size: 1rem;
+  margin-bottom: 30px;
+  line-height: 1.8;
+}
+
+.mensaje {
+  max-width: 540px;
+  margin: 22px auto;
+  font-size: 1.08rem;
+  line-height: 1.95;
+  color: #eee0f5;
+}
+
+.especial,
+.frase {
+  color: var(--rosa);
+  font-style: italic;
+}
+
+.frase {
+  margin: 30px auto;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.3rem;
+  line-height: 1.7;
+}
+
+.nota-musica {
+  margin-top: 20px;
+  font-size: .8rem;
+  color: #bda8cf;
+}
+
+/* ESTRELLA PRINCIPAL */
+
+.estrella-grande {
+  font-size: 5rem;
+  color: #f9c7f1;
+  text-shadow: 0 0 40px #ff94da;
+  animation: flotar 3s ease-in-out infinite;
+}
+
+@keyframes flotar {
+  0%, 100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-14px);
+  }
+}
+
+/* BOTONES */
+
+.boton {
+  display: inline-block;
+  border: 1px solid #ffc0e8aa;
+  border-radius: 40px;
+  background: linear-gradient(
+    135deg,
+    #e877b6,
+    #9664cc
+  );
+  color: white;
+  padding: 16px 30px;
+  margin-top: 25px;
+  font-family: inherit;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  box-shadow: 0 8px 30px #d6539b44;
+  transition: transform .25s, box-shadow .25s;
+}
+
+.boton:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 40px #ed71c477;
+}
+
+.boton:active {
+  transform: scale(.97);
+}
+
+/* GALERÍA DE FOTOGRAFÍAS */
+
+.galeria {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  max-width: 530px;
+  margin: 35px auto;
+}
+
+.foto {
+  background: #fff5f8;
+  padding: 10px 10px 25px;
+  box-shadow: 0 10px 30px #0008;
+  transform: rotate(-3deg);
+  transition: transform .3s;
+}
+
+.foto:nth-child(2) {
+  transform: rotate(3deg);
+}
+
+.foto:hover {
+  transform: rotate(0) scale(1.04);
+}
+
+.foto img {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  display: block;
+  background: #e5d8e7;
+}
+
+/* CARTA ROMÁNTICA */
+
+.carta {
+  background: #fff0f5;
+  color: #53344d;
+  border-radius: 12px;
+  padding: 32px;
+  margin: 30px auto;
+  text-align: left;
+  box-shadow: 0 20px 65px #0008;
+  transform: rotate(-.5deg);
+}
+
+.carta p {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.04rem;
+  line-height: 2;
+  margin-bottom: 20px;
+}
+
+.carta .firma {
+  color: #ad4d86;
+  font-weight: 700;
+  margin-top: 30px;
+}
+
+/* PANTALLA FINAL */
+
+.final-contenido {
+  max-width: 620px;
+}
+
+.corazon-final {
+  font-size: 5rem;
+  margin-bottom: 25px;
+  animation: latido 1.5s infinite;
+}
+
+@keyframes latido {
+  0%, 100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.18);
+  }
+}
+
+.mirame {
+  font-size: clamp(2.7rem, 10vw, 5rem);
+  margin: 35px auto;
+  animation: resplandor 2s infinite alternate;
+}
+
+@keyframes resplandor {
+  from {
+    text-shadow: 0 0 10px #ff89c555;
+  }
+
+  to {
+    text-shadow: 0 0 40px #ff89c5cc;
+  }
+}
+
+.continuara {
+  margin-top: 55px;
+  color: var(--lila);
+  letter-spacing: 2px;
+  font-size: .85rem;
+}
+
+/* CORAZONES FLOTANTES */
+
+.corazon-flotante {
+  position: absolute;
+  bottom: -40px;
+  font-size: 20px;
+  animation: subir 6s linear forwards;
+}
+
+@keyframes subir {
+  from {
+    opacity: 0;
+    transform: translateY(0) rotate(0);
+  }
+
+  15% {
+    opacity: .85;
+  }
+
+  to {
+    opacity: 0;
+    transform: translateY(-110vh) rotate(25deg);
+  }
+}
+
+/* BOTÓN DE MÚSICA */
+
+.musica-btn {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 20;
+  width: 45px;
+  height: 45px;
+  border: 1px solid #ffffff44;
+  border-radius: 50%;
+  background: #26153b;
+  color: white;
+  font-size: 1.4rem;
+  cursor: pointer;
+  backdrop-filter: blur(8px);
+}
+
+.musica-btn.reproduciendo {
+  background: #b35a9c;
+  box-shadow: 0 0 20px #ff9acb66;
+}
+
+/* DISEÑO PARA CELULARES */
+
+@media (max-width: 600px) {
+
+  .pantalla {
+    padding: 90px 20px 55px;
+  }
+
+  .mensaje {
+    font-size: 1rem;
+    line-height: 1.85;
+  }
+
+  .galeria {
+    gap: 12px;
+  }
+
+  .foto {
+    padding: 7px 7px 18px;
+  }
+
+  .carta {
+    padding: 23px;
+  }
+
+  .carta p {
+    font-size: .97rem;
+  }
+
+  .boton {
+    width: 100%;
+    max-width: 330px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: .01ms !important;
+    transition-duration: .01ms !important;
+  }
+}

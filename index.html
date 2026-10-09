@@ -1,0 +1,367 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#10091f">
+
+  <title>Para Damaris ✨ Mi bello cielo estrellado</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- FONDO ANIMADO -->
+  <div id="estrellas" aria-hidden="true"></div>
+  <div id="corazones" aria-hidden="true"></div>
+
+  <!-- MÚSICA DE FONDO -->
+  
+<!-- Música de fondo: YOKO - Álvaro Díaz -->
+<audio id="musica" loop preload="auto">
+  <source src="Yoko AlvaroDiaz.mp3" type="audio/mpeg">
+</audio>
+
+
+  <button
+    id="btnMusica"
+    class="musica-btn"
+    aria-label="Reproducir o pausar música"
+    title="Música de fondo">
+    ♫
+  </button>
+
+  <!-- PANTALLA 1: BIENVENIDA -->
+  <section id="inicio" class="pantalla activa">
+
+    <div class="contenido">
+
+      <div class="estrella-grande">✦</div>
+
+      <p class="etiqueta">
+        UNA PEQUEÑA HISTORIA PARA TI
+      </p>
+
+      <h1>Para Damaris</h1>
+
+      <h2>Mi bello cielo estrellado ✨</h2>
+
+      <p class="mensaje">
+        Entre tantas personas, tantos lugares
+        y tantas casualidades...
+        qué bonito que la vida me haya
+        permitido encontrarte.
+      </p>
+
+      <p class="mensaje especial">
+        Hoy quiero regalarte algo que hice
+        pensando solamente en ti. ❤️
+      </p>
+
+      <button class="boton" onclick="irA('intro')">
+        Comenzar nuestra historia ♡
+      </button>
+
+      <p class="nota-musica">
+        🎶 Una canción especial acompañará esta historia.
+      </p>
+
+    </div>
+  </section>
+
+  <!-- PANTALLA 2: INTRODUCCIÓN -->
+  <section id="intro" class="pantalla">
+
+    <div class="contenido">
+
+      <p class="etiqueta">
+        ANTES DE EMPEZAR...
+      </p>
+
+      <h2>Hay canciones que se escuchan...</h2>
+
+      <h1>Y personas que se sienten. ❤️</h1>
+
+      <p class="mensaje">
+        Hay canciones que me hacen pensar en ti,
+        momentos que quisiera guardar para siempre
+        y sonrisas tuyas que se han convertido
+        en mis recuerdos favoritos.
+      </p>
+
+      <p class="mensaje">
+        Te dediqué tres canciones, pero hoy
+        quiero dedicarte algo más:
+        un pedacito de lo que siento por ti.
+      </p>
+
+      <button class="boton" onclick="irA('yoko')">
+        Descubrirlo ✨
+      </button>
+
+    </div>
+  </section>
+
+  <!-- CAPÍTULO 1: YOKO -->
+  <section id="yoko" class="pantalla">
+
+    <div class="contenido">
+
+      <p class="etiqueta">CAPÍTULO 01</p>
+
+      <h1>YOKO</h1>
+
+      <p class="subtitulo">
+        El comienzo de algo bonito
+      </p>
+
+      <div class="galeria">
+
+        <div class="foto">
+          <img src="img/01.jpeg" alt="Nuestro primer recuerdo">
+        </div>
+
+        <div class="foto">
+          <img src="img/02.jpeg" alt="Un momento especial">
+        </div>
+
+      </div>
+
+      <p class="mensaje">
+        No sé exactamente en qué momento
+        comenzaste a volverte tan especial para mí.
+      </p>
+
+      <p class="mensaje">
+        Solo sé que desde que llegaste,
+        mis días tienen algo diferente.
+        Algo más bonito, más emocionante,
+        algo que me hace sonreír
+        incluso cuando no estás cerca.
+      </p>
+
+      <p class="frase">
+        "Qué suerte la mía haberte encontrado."
+      </p>
+
+      <button class="boton" onclick="irA('reina')">
+        Siguiente capítulo ♡
+      </button>
+
+    </div>
+  </section>
+
+  <!-- CAPÍTULO 2: REINA PEPIADA -->
+  <section id="reina" class="pantalla">
+
+    <div class="contenido">
+
+      <p class="etiqueta">CAPÍTULO 02</p>
+
+      <h1>Reina Pepiada</h1>
+
+      <p class="subtitulo">
+        Mi persona favorita
+      </p>
+
+      <div class="galeria">
+
+        <div class="foto">
+          <img src="img/03.jpeg" alt="Una sonrisa inolvidable">
+        </div>
+
+        <div class="foto">
+          <img src="img/04.jpeg" alt="Uno de nuestros recuerdos">
+        </div>
+
+      </div>
+
+      <p class="mensaje">
+        Me encanta tu manera de ser,
+        tu sonrisa, tus ocurrencias
+        y todas esas pequeñas cosas
+        que te hacen ser tú.
+      </p>
+
+      <p class="mensaje">
+        Si pudiera elegir con quién compartir
+        mis aventuras, mis risas
+        y mis momentos más felices,
+        te elegiría a ti una y mil veces.
+      </p>
+
+      <p class="frase">
+        "No necesito un día perfecto,
+        si puedo compartirlo contigo."
+      </p>
+
+      <button class="boton" onclick="irA('inarow')">
+        Hay algo más... ❤️
+      </button>
+
+    </div>
+  </section>
+
+  <!-- CAPÍTULO 3: INAROW62 -->
+  <section id="inarow" class="pantalla">
+
+    <div class="contenido">
+
+      <p class="etiqueta">CAPÍTULO 03</p>
+
+      <h1>INAROW62</h1>
+
+      <p class="subtitulo">
+        Todo lo que todavía nos espera
+      </p>
+
+      <div class="galeria">
+
+        <div class="foto">
+          <img src="img/05.jpeg" alt="Nuestro recuerdo especial">
+        </div>
+
+        <div class="foto">
+          <img src="img/06.jpeg" alt="Un instante juntos">
+        </div>
+
+      </div>
+
+      <p class="mensaje">
+        No sé cuántos lugares nos faltan por conocer,
+        cuántas canciones nos quedan por escuchar
+        ni cuántos recuerdos nos esperan.
+      </p>
+
+      <p class="mensaje">
+        Pero cuando pienso en todo lo bonito
+        que todavía puede llegar,
+        me emociona imaginarte formando
+        parte de esos momentos.
+      </p>
+
+      <p class="frase">
+        "De todas las historias que podría vivir,
+        me emociona muchísimo la nuestra."
+      </p>
+
+      <button class="boton" onclick="irA('carta')">
+        Tengo una carta para ti 💌
+      </button>
+
+    </div>
+  </section>
+
+  <!-- CARTA ROMÁNTICA -->
+  <section id="carta" class="pantalla">
+
+    <div class="contenido">
+
+      <p class="etiqueta">
+        DE MI CORAZÓN PARA EL TUYO
+      </p>
+
+      <h1>Mi bello cielo estrellado</h1>
+
+      <div class="carta">
+
+        <p>Mi hermosa Damaris:</p>
+
+        <p>
+          Si estás leyendo esto, seguramente
+          estoy a tu lado, intentando disimular
+          lo nervioso y feliz que me hace
+          compartir este momento contigo.
+        </p>
+
+        <p>
+          Quiero que sepas que eres alguien
+          verdaderamente especial para mí.
+          Me encanta pasar tiempo contigo,
+          escucharte, reírnos juntos
+          y descubrir cada día algo nuevo de ti.
+        </p>
+
+        <p>
+          A veces me cuesta encontrar
+          las palabras exactas para explicarte
+          todo lo bonito que provocas en mí.
+          Por eso quise hacerte esta pequeña página.
+        </p>
+
+        <p>
+          Porque entre tantas canciones,
+          tantas personas y tantos momentos,
+          tú te has convertido en una
+          de mis casualidades más bonitas.
+        </p>
+
+        <p>
+          Gracias por ser tú, por tu sonrisa,
+          por tu cariño y por cada instante
+          que hemos compartido.
+        </p>
+
+        <p class="firma">
+          Con muchísimo cariño,<br>
+          alguien que sonríe cada vez que piensa en ti. ❤️
+        </p>
+
+      </div>
+
+      <button class="boton" onclick="irA('final')">
+        Una última cosita... ✨
+      </button>
+
+    </div>
+  </section>
+
+  <!-- PANTALLA FINAL -->
+  <section id="final" class="pantalla">
+
+    <div class="contenido final-contenido">
+
+      <div class="corazon-final">❤️</div>
+
+      <p class="etiqueta">
+        9 DE OCTUBRE · CDMX
+      </p>
+
+      <h1>Damaris...</h1>
+
+      <h2>Mi bello cielo estrellado ✨</h2>
+
+      <p class="mensaje">
+        De todas las canciones,
+        mi historia favorita
+        es la que estoy escribiendo contigo.
+      </p>
+
+      <p class="mensaje">
+        Y aunque esta página tiene
+        muchas palabras, hay algo
+        que quiero decirte yo mismo.
+      </p>
+
+      <h1 class="mirame">
+        Ahora, mírame. ❤️
+      </h1>
+
+      <p class="subtitulo">
+        Porque hay momentos que merecen
+        vivirse mirándonos a los ojos.
+      </p>
+
+      <p class="continuara">
+        Nuestra historia continuará... ✦
+      </p>
+
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+
+</body>
+</html>
